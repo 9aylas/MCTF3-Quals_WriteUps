@@ -2,11 +2,11 @@
  - http://37.187.186.219:5555 -- Our TARGET !
 
 # Matrix 1 :
-* inspecting the source... nothing's interesting there 
+* Inspecting the source... nothing's interesting there.
 * So i saved the picture (whiterabbit.jpg) and i started analysing it , i found this area "morpheus.matrix:5555"
  ![alt text](https://i.imgur.com/EjZ3azD.png "huh")
  
-> Maybe something behind this adresse, so i made a little python script to communicate with our target.
+> Maybe something behind this adresse, so i made a little python script to communicate with our target changing "Host" header.
 
 ```
 import requests
@@ -36,12 +36,12 @@ print(r.text)
 
 # Matrix 2 :
 - Just checked : http://37.187.186.219:5555/matrix.txt | and i cracked the MD5 hash.... Hmmm what else !?
- -- I just found this word "keep-alive" ( in both of the hash cracked result and matrix.txt ) 
+- I just found this word "keep-alive" ( in both of the hash cracked result and matrix.txt ) 
 - __HTTP__ works with request-response : __client__ connects to __server__, performs a request and gets a response.
 - Without keep-alive, the connection to an HTTP server is closed after each response. With HTTP __keep-alive__ you keep the underlying TCP connection open until certain criteria are met.
 * Hummmm good to know this..., if u remember in __Matrix 1__ (you can take this pill and stop here or you can take the red one to see the truth, this one is hidden, ask the program for it ) 
 - So here we have 2 choices ( take the pill (X) and stop here or take the red one , pill (red)
--- I just choosed the red pill to know the truth Via " Connection Header "  xd.
+- I just choosed the red pill to know the truth Via " Connection Header "  xd.
 - W're going to edit our python script by adding Connection Header with "red" parameter.
 > i just renamed it head2 
 ```
