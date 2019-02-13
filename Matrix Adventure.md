@@ -1,7 +1,8 @@
 
  - http://37.187.186.219:5555 -- Our TARGET !
-* inspecting the source... nothing's interesting there 
 
+# Matrix 1 :
+* inspecting the source... nothing's interesting there 
 * So i saved the picture (whiterabbit.jpg) and i started analysing it , i found this area "morpheus.matrix:5555"
  ![alt text](https://i.imgur.com/EjZ3azD.png "huh")
  
@@ -31,5 +32,43 @@ print(r.text)
  <img src="./pill.jpeg" height=250>
  </center></pre>
 ```
-> - Cool , we got our first Flag ! MCTF3{WeARe4LL_our_Own_Perception} :D
+> - Cool , we got our first Flag ! __MCTF3{WeARe4LL_our_Own_Perception}__ :D
 
+# Matrix 2 :
+- Just checked : http://37.187.186.219:5555/matrix.txt | and i cracked the MD5 hash.... Hmmm what else !?
+ -- I just found this word "keep-alive" ( in both of the hash cracked result and matrix.txt ) 
+- __HTTP__ works with request-response : __client__ connects to __server__, performs a request and gets a response.
+- Without keep-alive, the connection to an HTTP server is closed after each response. With HTTP __keep-alive__ you keep the underlying TCP connection open until certain criteria are met.
+* Hummmm good to know this..., if u remember in __Matrix 1__ (you can take this pill and stop here or you can take the red one to see the truth, this one is hidden, ask the program for it ) 
+- So here we have 2 choices ( take the pill (X) and stop here or take the red one , pill (red)
+-- I just choosed the red pill to know the truth Via " Connection Header "  xd.
+- W're going to edit our python script by adding Connection Header with "red" parameter.
+> i just renamed it head2 
+```
+import requests
+url = "http://37.187.186.219:5555"
+head2 = {
+    'host': "morpheus.matrix:5555",
+	'Connection': "red",
+    'access-control-request-headers': "application/x-www-form-urlencoded",
+    'x-requested-with': "application/json",
+    'cache-control': "no-cache",
+    }
+r2 = requests.request("GET", url, headers=head2)
+print(r2.text)
+```
+```
+ # C:\>Python Matrix.py
+ ================================= Result ====================================
+<body bgcolor=#001B33><center><pre><font size=4 color=#2CAC0C face=monospace>
+Welcome to zion here is the Nebuchadnezzar 
+MCTF3{Th3Truth_Mak3_U@Suffer}
+ here you gonna start your training
+<img src="./nb.jpeg" height=250>
+<form method=post action=''><table>
+<tr><td><font color="#125523" size=4>USER</td><td><input type=text name=username></td></tr>
+<tr><td><font color="#125523" size=4>PASSWORD</td><td><input type=text name=password></td></tr>
+<tr><td></td><td><input type=submit value='LOGIN'></td></tr>
+</table></form>
+```
+> - Cool our 2nd flag ! __MCTF3{Th3Truth_Mak3_U@Suffer}__ :D
