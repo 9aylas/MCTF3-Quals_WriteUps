@@ -12,6 +12,6 @@ I only accept peoplo from FA246D0262C3925617B0C72BB20EEB1D
  
  * So we have to fix it at __9999__ , -p arg .
  
-> C:\>nc -p 9999 37.187.186.219 1984
-> Hey i was expecting you 
-> ``` Here is your flag :``` __MCTF3{D4mnUcanControllAnyThink}__
+- > C:\>nc -p 9999 37.187.186.219 1984
+- > Hey i was expecting you 
+- > ``` Here is your flag :``` __MCTF3{D4mnUcanControllAnyThink}__
