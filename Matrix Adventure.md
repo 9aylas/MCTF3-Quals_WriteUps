@@ -133,6 +133,6 @@ Welcome MCTF{Sqli_IzALwaysTHEk3y$}
 - Nice one :D final flag : __Welcome MCTF{Sqli_IzALwaysTHEk3y$}__
 
 
-### it was a great adventure guys !  Thanks to NEO :D ###
+#### It was a great adventure guys , i really loved this CTF ! Thanks NEO :D ####
 
-> Greetz to all my dudes : Th3 Jackers , Ghosty , Aymen , Omar , Sudo_Root .... & All <3 
+> Greetz to all my dudes : Th3 Jackers , Ghosty , Aymen , Tr0jan , Sudo_Root Team.... & All <3 
