@@ -1,16 +1,19 @@
 # KeyFunMe ( Reverse Enginnering )
 
-- Hello World , 1st step : Analysis | Ideology
+- __Hello World , 1st step : Analysis | Ideology__
  ![alt text](https://i.imgur.com/LzYhxR9.png "piwpiw") 
  
- - Checking our AREA :s
+- __Checking our AREA :s__
   ![alt text](https://i.imgur.com/q2iBWUJ.png "piwpiw") 
   
-   - Cool, Callz Function !
+  
+- __Cool, Callz Function !__
   ![alt text](https://i.imgur.com/9wChQdN.png "piwpiw")
   
-   - Hummm converting our algo to some programming language | i did it with php cuz i was stowne, and i didn't want to wast more time lolz :s 
-  ![alt text](https://i.imgur.com/y0eFmil.png "piwpiw")
+  
+- __Hummm converting our algo to some programming language | i did it with php cuz i was stowne, and i didn't want to wast more time lolz :s __
+>. 
+![alt text](https://i.imgur.com/y0eFmil.png "piwpiw")
  
  ```
  <?php
@@ -30,8 +33,8 @@ $key='123123';  // here ur key
 ?>
  ```
 
-  - It's time to keygen our serial-killer xd
-  ![alt text](https://i.imgur.com/Ky6PRon.png "piwpiw")
+- __It's time to keygen our serial-killer xd__
+![alt text](https://i.imgur.com/Ky6PRon.png "piwpiw")
 
  
  #### I hope u enjoy ####
